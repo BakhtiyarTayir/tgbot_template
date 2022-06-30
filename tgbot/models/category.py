@@ -1,0 +1,14 @@
+from sqlalchemy import Column, String, Integer, Boolean
+from sqlalchemy.ext.declarative import declarative_base
+from tgbot.models.database import Base
+
+
+class Category(Base):
+    __tablename__ = 'category'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(Integer, index=True)
+    is_active = Column(Boolean)
+
+    def __str__(self):
+        return self.name
